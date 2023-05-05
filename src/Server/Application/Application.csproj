@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="BCrypt.Net-Next" Version="4.0.2" />
+      <PackageReference Include="Mapster" Version="7.2.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.11" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\..\Shared\Domain\Domain.csproj" />
+      <ProjectReference Include="..\..\Shared\Requests\Requests.csproj" />
+      <ProjectReference Include="..\SharedLib\SharedLib.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="Users\Authenticate\**" />
+      <Compile Include="Users\Authenticate\AuthenticateCommand.cs" />
+      <Compile Include="Users\Authenticate\AuthenticateCommandHandler.cs" />
+      <Compile Include="Users\Authenticate\UserAuthenticator.cs" />
+      <Compile Remove="Shared\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <EmbeddedResource Remove="Users\Authenticate\**" />
+      <EmbeddedResource Remove="Shared\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Users\Authenticate\**" />
+      <None Remove="Shared\**" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Patients\Delete" />
+    </ItemGroup>
+
+</Project>
