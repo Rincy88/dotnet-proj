@@ -27,8 +27,8 @@ jobs:
          -H 'Content-Type: multipart/form-data' \
          -H "X-Api-Key: 1DMIXAnGtTIeTQDddlHSvpj6d3as174S " \
          -F "autoCreate=true" \
-         -F "projectName='test-repos1'" \
-         -F "projectVersion='1.0.0'" \
-         -F "parentName='test-11-07'" \
-         -F "parentVersion='1.0.0'" \
+         -F "projectName=test-repos1" \
+         -F "projectVersion=1.0.0" \
+         -F "parentName=test-11-07" \
+         -F "parentVersion=1.0.0" \
          -F "bom=@output.xml"
